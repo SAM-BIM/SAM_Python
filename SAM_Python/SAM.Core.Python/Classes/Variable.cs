@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Drawing;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace SAM.Core.Python
 {
@@ -67,7 +68,7 @@ namespace SAM.Core.Python
             }
         }
 
-        public bool FromJObject(JObject jObject)
+        public bool FromJsonObject(JsonObject jObject)
         {
             if (jObject == null)
             {
@@ -76,30 +77,30 @@ namespace SAM.Core.Python
 
             if (jObject.ContainsKey("VariableType"))
             {
-                variableType = new VariableType(jObject.Value<JObject>("VariableType"));
+                variableType = new VariableType(jObject["VariableType"] as JsonObject);
             }
 
             if (jObject.ContainsKey("Value"))
             {
-                value = jObject.Value<object>("Value");
+                value = jObject["Value"]?.Deserialize<object>();
             }
 
             return true;
         }
 
-        public JObject ToJObject()
+        public JsonObject ToJsonObject()
         {
-            JObject jObject = new JObject();
+            JsonObject jObject = new JsonObject();
             jObject.Add("_type", Query.FullTypeName(this));
 
             if (variableType != null)
             {
-                jObject.Add("VariableType", variableType.ToJObject());
+                jObject.Add("VariableType", variableType.ToJsonObject());
             }
 
             if (value != null)
             {
-                jObject.Add("Value", value as dynamic);
+                jObject.Add("Value", JsonValue.Create(value));
             }
 
             return jObject;
