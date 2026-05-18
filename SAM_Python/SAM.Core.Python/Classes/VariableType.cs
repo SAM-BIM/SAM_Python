@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿// SPDX-License-Identifier: LGPL-3.0-or-later
+// Copyright (c) 2020–2026 Michal Dengusiak & Jakub Ziolkowski and contributors
+using System.Text.Json.Nodes;
 using System;
 
 namespace SAM.Core.Python
@@ -16,9 +18,9 @@ namespace SAM.Core.Python
                 name = variableType.name;
             }
         }
-        public VariableType(JObject jObject)
+        public VariableType(JsonObject jObject)
         {
-            FromJObject(jObject);
+            FromJsonObject(jObject);
         }
 
         public VariableType(Type type, string name)
@@ -35,7 +37,7 @@ namespace SAM.Core.Python
             }
         }
 
-        public bool FromJObject(JObject jObject)
+        public bool FromJsonObject(JsonObject jObject)
         {
             if (jObject == null)
             {
@@ -44,20 +46,20 @@ namespace SAM.Core.Python
 
             if (jObject.ContainsKey("Name"))
             {
-                name = jObject.Value<string>("Name");
+                name = jObject["Name"]?.GetValue<string>() ?? default(string);
             }
 
             if (jObject.ContainsKey("Type"))
             {
-                type = Query.Type(jObject.Value<string>("Type"), true);
+                type = Query.Type(jObject["Type"]?.GetValue<string>() ?? default(string), true);
             }
 
             return true;
         }
 
-        public JObject ToJObject()
+        public JsonObject ToJsonObject()
         {
-            JObject jObject = new JObject();
+            JsonObject jObject = new JsonObject();
             jObject.Add("_type", Query.FullTypeName(this));
 
             if (name != null)
