@@ -1,6 +1,6 @@
 # SAM Grasshopper icon redesign — SAM_Python PR record
 
-Branch `feature/sam-gh-icon-redesign`, based on `sow/2026-Q3` @ `a1ff9c8`. PR: (to be opened).
+Branch `feature/sam-gh-icon-redesign`, based on `sow/2026-Q3` @ `a1ff9c8`. PR: SAM-BIM/SAM_Python#6.
 Propagates the SAM icon design system from SAM-BIM/SAM#166 (head `cf4d924a`, open, not merged) to this repository.
 
 ## Current status
