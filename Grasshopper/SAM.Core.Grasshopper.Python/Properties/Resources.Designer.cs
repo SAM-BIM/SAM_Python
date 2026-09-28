@@ -69,5 +69,65 @@ namespace SAM.Core.Grasshopper.Python.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SAM_GH_Result {
+            get {
+                object obj = ResourceManager.GetObject("SAM_GH_Result", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SAM_GH_ScriptRun {
+            get {
+                object obj = ResourceManager.GetObject("SAM_GH_ScriptRun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SAM_GH_Type {
+            get {
+                object obj = ResourceManager.GetObject("SAM_GH_Type", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SAM_GH_TypeCreate {
+            get {
+                object obj = ResourceManager.GetObject("SAM_GH_TypeCreate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SAM_GH_Value {
+            get {
+                object obj = ResourceManager.GetObject("SAM_GH_Value", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SAM_GH_ValueCreate {
+            get {
+                object obj = ResourceManager.GetObject("SAM_GH_ValueCreate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace SAM.Analytical.Grasshopper
     {
         public override Guid ComponentGuid => new Guid("b619792b-054b-4abb-9a83-3cadab594e74");
 
-        protected override System.Drawing.Bitmap Icon => Resources.SAM3;
+        protected override System.Drawing.Bitmap Icon => Resources.SAM_GH_Value;
 
         public GooInputParam()
             : base(typeof(Input).Name, typeof(Input).Name, typeof(Input).FullName.Replace(".", " "), "Params", "SAM")
