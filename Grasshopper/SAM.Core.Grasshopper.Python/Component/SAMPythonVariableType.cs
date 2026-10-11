@@ -1,4 +1,7 @@
-﻿using Grasshopper.Kernel;
+﻿// SPDX-License-Identifier: LGPL-3.0-or-later
+// Copyright (c) 2020-2026 Michal Dengusiak & Jakub Ziolkowski and contributors
+
+using Grasshopper.Kernel;
 using SAM.Core;
 using SAM.Core.Grasshopper;
 using SAM.Core.Grasshopper.Python.Properties;
@@ -24,7 +27,7 @@ namespace SAM.Analytical.Grasshopper
         /// <summary>
         /// Provides an Icon for the component.
         /// </summary>
-        protected override System.Drawing.Bitmap Icon => Resources.SAM3;
+        protected override System.Drawing.Bitmap Icon => Resources.SAM_GH_TypeCreate;
 
         /// <summary>
         /// Initializes a new instance of the SAM_point3D class.
