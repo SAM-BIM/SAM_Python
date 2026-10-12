@@ -10,7 +10,8 @@ Do not rely on previous conversation memory.
 
 - Active development branch: `sow/2026-Q4`. It was created on 2026-10-11 directly from `master`
   `1c9773c8`; its first Q4 content is the merged icon migration (merge commit `de2a98b`).
-  No quarterly bootstrap files (no `AGENTS.md`, no `PROJECT_PROGRESS.md`) were added at creation.
+  No quarterly bootstrap files (no `AGENTS.md`, no `PROJECT_PROGRESS.md`) were added at creation;
+  `PROJECT_PROGRESS.md` was created later, on 2026-10-12, by the agent-instructions rollout closeout.
 - `sow/2026-Q3` is frozen (the previous quarter's record). Do not commit to, rebase, rename, archive or delete it.
 - `master` is the product line. It does not carry `AGENTS.md`, `CLAUDE.md` or `PROJECT_PROGRESS.md`; these internal
   files live on `sow/*` branches only. Never merge or restore them onto `master`.
@@ -20,9 +21,9 @@ Do not rely on previous conversation memory.
 Before making significant changes:
 
 1. Read this `AGENTS.md`.
-2. This repository has no `PROJECT_PROGRESS.md` yet. Read the record document and
-   live description of any PR you are continuing; use Git history and merged PRs
-   for earlier state (see Project continuity).
+2. Inspect the headings in `PROJECT_PROGRESS.md`, then read the latest
+   dated Q4 closeout and the sections relevant to this task. Read the
+   record document and live description of any PR you are continuing.
 3. Understand the relevant existing code, architecture, tests, and conventions.
 4. Review the current Git branch and working tree; preserve existing local changes.
 5. Continue from the documented current state.
@@ -72,17 +73,13 @@ explicit owner approval; none is implied by merging an ordinary PR.
 
 ## Project continuity
 
-This repository has no `PROJECT_PROGRESS.md` on `sow/2026-Q4`: the branch was created
-without the quarterly bootstrap files. Never create it on a feature branch. Creating it
-is an owner-authorized bootstrap, made as a post-merge docs-only `[skip ci]` commit on
-`sow/2026-Q4` with known SHAs. Until then keep status/evidence in the PR record
-document and PR description; after merge they are the closeout record, and the next
-session should ask the owner whether to authorize creating the progress file.
-
-Once `PROJECT_PROGRESS.md` exists it is updated only after a PR has merged: fetch the base
-branch and add the closeout entry, including the merge SHA, as a direct docs-only commit on
-the base branch (for a release-promotion PR into `master`, on the outgoing `sow` branch
-instead). Do not modify unrelated stream entries.
+`PROJECT_PROGRESS.md` is updated only after a PR has merged.
+During implementation, keep status/evidence on the PR branch in the
+PR record document and PR description. After merge, fetch the base
+branch and add the closeout entry, including the merge SHA, as a
+direct docs-only commit on the base branch (for a release-promotion
+PR into `master`, on the outgoing `sow` branch instead). Do not modify
+unrelated stream entries.
 
 The order of work is:
 
